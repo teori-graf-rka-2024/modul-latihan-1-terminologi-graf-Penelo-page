@@ -1,7 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-def create_graph(edges: list[tuple[int, int]]) -> nx.Graph:
+def create_graph(edges:list[tuple[int, int]]) -> nx.Graph:
     G = nx.Graph()
     G.add_edges_from(edges)
     return G
@@ -10,7 +10,7 @@ def get_degree(G: nx.Graph, node: int) -> int:
     return G.degree[node]
 
 def dfs_traversal(G: nx.Graph, start: int) -> list[int]:
-    return list(nx.dfs_preorder_nodes(G, source=start))
+    return list(nx.dfs_preorder_nodes(G, start))
 
 def bfs_traversal(G: nx.Graph, start: int) -> list[int]:
     return list(nx.bfs_tree(G, source=start))
